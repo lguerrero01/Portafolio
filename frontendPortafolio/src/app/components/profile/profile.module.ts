@@ -4,7 +4,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 ///////////////////
 // Components
 ///////////////////
@@ -39,6 +39,11 @@ import { SplitPipe } from 'src/app/shared/pipes/split.pipe';
     ReferenceComponent,
     ContactComponent,
   ],
-  imports: [CommonModule, NgxPaginationModule, FormsModule],
+  imports: [
+    CommonModule,
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class ProfileModule {}

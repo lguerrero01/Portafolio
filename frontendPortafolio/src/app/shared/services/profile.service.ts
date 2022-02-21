@@ -30,8 +30,8 @@ export class ProfileService {
     },
     {
       id: 2,
-      title: 'Login con autenticacion',
-      desc: 'Login usando el STACK MEAN, poniendo aprueba los middleware.',
+      title: 'Login',
+      desc: 'Login con autenticacion usando el STACK MEAN, poniendo a prueba los middleware.',
       livedemo: '',
       githurl: 'https://github.com/lguerrero01/authServer',
       mediumlink: '',
@@ -47,19 +47,19 @@ export class ProfileService {
       githurl: 'https://github.com/lguerrero01/hogwartsTest',
       mediumlink:
         '',
-      imgUrl: 'assets/images/project3.png',
-      tech: 'Angular 10, Bootstrap, AOS',
+      imgUrl: 'assets/img/images/project3.png',
+      tech: 'Angular 10, Bootstrap, libreria AOS',
     },
     {
       id: 4,
       title: 'Portafolio',
       desc: 'Este portafolio tambien es parte de mis proyectos',
       livedemo: '',
-      githurl: 'https://github.com/lguerrero01/hogwartsTest',
+      githurl: 'https://github.com/lguerrero01/Portafolio/tree/main/frontendPortafolio',
       mediumlink:
         '',
-      imgUrl: 'assets/images/project3.png',
-      tech: 'Angular 13, Bootstrap, AOS',
+      imgUrl: 'assets/img/images/project4.png',
+      tech: 'Angular 13, Bootstrap, libreria AOS',
     },
   ];
 
@@ -71,7 +71,7 @@ export class ProfileService {
   Buen conocimiento de Typescript, Bootstrap, Material UI, SQL, MongoDB entre otros...`;
 
   public about: string =
-    'Amante de la innovación y todo lo relacionado con tecnologia para generar nuevos conocimientos. Muy calculador sobre el tiempo que dedico y el trabajo que realizo.';
+    'Amante de la innovación y todo lo relacionado con la tecnologia para adquirir nuevos conocimientos. Muy calculador sobre el tiempo que dedico y el trabajo que realizo.';
   //////////////
   // Resume
   //////////////

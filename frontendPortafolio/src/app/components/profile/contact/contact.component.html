@@ -1,6 +1,6 @@
-<div class="section " id="contact" >
+<div class="section " id="contact">
     <div class="cc-contact-information" style="background-image: url('assets/img/backgroundPolygon.svg');">
-        <div class="container" >
+        <div class="container">
             <div class="cc-contact">
                 <div class="row">
                     <div class="col-md-9">
@@ -9,9 +9,9 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="card-body">
-                                        <form name="form" (ngSubmit)="f.form.valid ; f.resetForm()" #f="ngForm"
-                                            novalidate>
-                                            <div class="p pb-3"> 
+                                        <form name="form" [formGroup]="fg"
+                                            (ngSubmit)="sendEmail()" >
+                                            <div class="p pb-3">
                                                 <strong>Sientete libre de contactarme</strong>
                                             </div>
                                             <div class="row mb-3">
@@ -21,10 +21,8 @@
                                                             <i class="fa fa-user-circle"></i>
                                                         </span>
                                                         <input class="form-control" type="text" name="name"
-                                                            placeholder="Nombre" [(ngModel)]="model.name"
-                                                            #name="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
-                                                            required />
+                                                            placeholder="Nombre" formControlName="name"
+                                                            [ngClass]="{ 'is-invalid': validFields('name')}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -34,11 +32,9 @@
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-file-text"></i>
                                                         </span>
-                                                        <input class="form-control" type="text" name="subject"
-                                                            placeholder="Asunto" [(ngModel)]="model.subject"
-                                                            #subject="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && subject.invalid }"
-                                                            required />
+                                                        <input class="form-control" type="text" placeholder="Asunto"
+                                                            formControlName="subject"
+                                                            [ngClass]="{ 'is-invalid':validFields('subject')}" />
                                                     </div>
                                                 </div>
                                             </div>
@@ -48,29 +44,26 @@
                                                         <span class="input-group-addon">
                                                             <i class="fa fa-envelope"></i>
                                                         </span>
-                                                        <input class="form-control" type="text" name="email"
-                                                            placeholder="E-mail" [(ngModel)]="model.email"
-                                                            #email="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
-                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                                                            required />
+                                                        <input class="form-control" type="text" placeholder="E-mail"
+                                                            formControlName="email"
+                                                            [ngClass]="{ 'is-invalid': validFields('email')}"
+                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row mb-3">
                                                 <div class="col">
                                                     <div class="form-group">
-                                                        <textarea class="form-control" name="message"
-                                                            placeholder="Tu mensaje" [(ngModel)]="model.message"
-                                                            #message="ngModel"
-                                                            [ngClass]="{ 'is-invalid': f.submitted && message.invalid }"
-                                                            required></textarea>
+                                                        <textarea class="form-control" placeholder="Tu mensaje"
+                                                            formControlName="message"
+                                                            [ngClass]="{ 'is-invalid': validFields('message')}"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                                                    <button [disabled]="!fg.valid" class="btn btn-primary"
+                                                        type="submit">Enviar</button>
                                                 </div>
                                             </div>
                                         </form>
