@@ -11,9 +11,10 @@ export interface EducationData {
   from_to_year: string;
   education: string;
   stream: string;
-  info: string;
+  info: (string)[];
   institution: string;
 }
+
 export interface Proyect {
   id: number;
   title: string;

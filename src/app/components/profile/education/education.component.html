@@ -15,7 +15,7 @@
                         <h4 class="category">Institucion: {{item.institution}}
                         </h4>
                         <ul>
-                            <li *ngIf="item.info"> {{item.info}}</li>
+                            <li *ngFor="let data of item.info ">{{data}}</li>
                         </ul>
                     </div>
                 </div>

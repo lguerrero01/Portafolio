@@ -14,56 +14,6 @@ export class ProfileService {
   constructor() {}
 
   //////////////
-  // Proyects
-  //////////////
-  public projects: Proyect[] = [
-    {
-      id: 1,
-      title: 'Funnel de venta de la TribuEsencial',
-      desc: 'Hecho para captar oportunidades potenciales de ventas, utiliza reactive forms, stepper y componentes personalizados',
-      livedemo: 'https://latribuesencial.com/',
-      githurl: 'https://github.com/lguerrero01/latribuesencial',
-      mediumlink:
-        '',
-      imgUrl: 'assets/img/images/project1.png',
-      tech: 'Angular 11, Laravel, RxJs, Bootstrap',
-    },
-    {
-      id: 2,
-      title: 'Login',
-      desc: 'Login con autenticacion usando el STACK MEAN, poniendo a prueba los middleware.',
-      livedemo: '',
-      githurl: 'https://github.com/lguerrero01/authServer',
-      mediumlink: '',
-      imgUrl: 'assets/img/images/project2.png',
-      tech: 'Angular 11, NodeJs, MongoDB, Express',
-    },
-
-    {
-      id: 3,
-      title: 'App de Hogwarts',
-      desc: 'Escuela de Hechicería donde podras por cada casa consultar los personajes usando una API publica, listar personajes, ordenar y filtrar',
-      livedemo: '',
-      githurl: 'https://github.com/lguerrero01/hogwartsTest',
-      mediumlink:
-        '',
-      imgUrl: 'assets/img/images/project3.png',
-      tech: 'Angular 10, Bootstrap, libreria AOS',
-    },
-    {
-      id: 4,
-      title: 'Portafolio',
-      desc: 'Este portafolio tambien es parte de mis proyectos',
-      livedemo: '',
-      githurl: 'https://github.com/lguerrero01/Portafolio/tree/main/frontendPortafolio',
-      mediumlink:
-        '',
-      imgUrl: 'assets/img/images/project4.png',
-      tech: 'Angular 13, Bootstrap, libreria AOS',
-    },
-  ];
-
-  //////////////
   // About
   //////////////
   public about2: string = `Software Developer con mas de 3 años de experiencia .
@@ -75,8 +25,70 @@ export class ProfileService {
   //////////////
   // Resume
   //////////////
-  public resumeurl: string =
-    'https://drive.google.com/file/d/1uPVrYnfdu7Sq3UMEaiVWd2DOv4sPyeMU/view';
+  public resumeUrlEn: string =
+    'https://drive.google.com/file/d/1IJE9Mr2AB5hyi7Tg7IxU4F2j54WCYhBL/view';
+
+  public resumeUrlEs: string =
+    'https://drive.google.com/file/d/1CuhuT0aNhDP5LXJbSiXc3JXTxa0K1RGR/view';
+
+  //////////////
+  // Projects
+  //////////////
+  public projects: Proyect[] = [
+    {
+      id: 1,
+      title: 'Funnel de venta de la TribuEsencial',
+      desc: 'Hecho para captar oportunidades potenciales de ventas, utiliza reactive forms, stepper y componentes personalizados',
+      livedemo: 'https://latribuesencial.com/',
+      githurl: 'https://github.com/lguerrero01/latribuesencial',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project1.png',
+      tech: 'Angular 11, Laravel, RxJs, Bootstrap',
+    },
+    {
+      id: 2,
+      title: 'Login',
+      desc: 'Login con autenticacion usando el STACK MEAN, poniendo a prueba los middleware.',
+      livedemo: '',
+      githurl: 'https://github.com/lguerrero01/authServer',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project2.png',
+      tech: 'Angular 11, NodeJs, MongoDB, Express',
+    },
+
+    {
+      id: 3,
+      title: 'App de Hogwarts',
+      desc: 'Escuela de Hechicería donde podras por cada casa consultar los personajes usando una API publica, listar personajes, ordenar y filtrar',
+      livedemo: '',
+      githurl: 'https://github.com/lguerrero01/hogwartsTest',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project3.png',
+      tech: 'Angular 10, Bootstrap, libreria AOS',
+    },
+    {
+      id: 4,
+      title: 'Portafolio',
+      desc: 'Este portafolio tambien es parte de mis proyectos',
+      livedemo: '',
+      githurl:
+        'https://github.com/lguerrero01/Portafolio/tree/main/frontendPortafolio',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project4.png',
+      tech: 'Angular 13, Bootstrap, libreria AOS',
+    },
+    {
+      id: 5,
+      title: 'App de Empleados',
+      desc: 'Podras administrar Empleados y con todas las funcionalidades del CRUD ademas hace uso de toastr para las notificaciones.',
+      livedemo: '',
+      githurl:
+        'https://github.com/lguerrero01/angularEmployees',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project5.png',
+      tech: 'Angular 13, Bootstrap, AOS, toastr',
+    },
+  ];
 
   //////////////
   // Skills
@@ -138,23 +150,40 @@ export class ProfileService {
       education: 'Licenciatura',
       stream: 'Licenciatura en Computacion',
       institution: 'Universidad de Carabobo',
-      info: `Facultad de Ciencias y Tecnologia (Facyt) actualmente cursando 5to Semestre`,
+      info: [`Facultad de Ciencias y Tecnologia (Facyt)`],
     },
     {
       id: 2,
+      from_to_year: '2018 - Presente',
+      education: 'Cursos',
+      stream: 'Diversos cursos de desarrollo web',
+      institution: `FrontendMaster, Udemy, Coursera.`,
+      info: [
+        `Desarrollo de páginas con AngularJs en Coursera`,
+        `
+      Desarrollo del lado del servidor: NodeJS, Express y MongoDB en Coursera`,
+        `Desarrollador Web Completo en Udemy Academy: HTML5, CSS3, JS, AJAX
+      PHP y Mysql en Udemy`,
+        ` Angular 13 Fundamentals en FrontendMaster`,
+        `Production-Grade Angular en FrontendMaster`,
+        `TypeScript Fundamentals en FrontendMaster`,
+      ],
+    },
+    {
+      id: 3,
       from_to_year: '2010 - 2015',
       education: 'Liceo',
       stream: 'Bachiller en Ciencia',
       institution: 'Lino de Clemente',
-      info: ``,
+      info: [],
     },
     {
-      id: 3,
+      id: 4,
       from_to_year: '2005 - 2010',
       education: 'Escolar',
       stream: 'Educacion Escolar',
       institution: 'U.E Francisco Arismendi',
-      info: ``,
+      info: [],
     },
   ];
 
