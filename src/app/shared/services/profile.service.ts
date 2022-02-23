@@ -136,7 +136,7 @@ export class ProfileService {
     },
     {
       id: 8,
-      skill: 'Typescrip',
+      skill: 'Typescript',
       progress: '85%',
     },
   ];
@@ -146,11 +146,12 @@ export class ProfileService {
   public educationData: EducationData[] = [
     {
       id: 1,
-      from_to_year: '2015 - Presente',
+      from_to_year: 'Presente',
       education: 'Licenciatura',
       stream: 'Licenciatura en Computacion',
       institution: 'Universidad de Carabobo',
-      info: [`Facultad de Ciencias y Tecnologia (Facyt)`],
+      info: [`Facultad de Ciencias y Tecnologia (Facyt)`,
+      `Actualmente cursando 5to semestre`],
     },
     {
       id: 2,
