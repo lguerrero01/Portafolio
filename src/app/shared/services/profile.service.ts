@@ -29,7 +29,7 @@ export class ProfileService {
     'https://drive.google.com/file/d/1IJE9Mr2AB5hyi7Tg7IxU4F2j54WCYhBL/view';
 
   public resumeUrlEs: string =
-    'https://drive.google.com/file/d/1CuhuT0aNhDP5LXJbSiXc3JXTxa0K1RGR/view';
+    'https://drive.google.com/file/d/1cB_EQPER_ok6BrSy1kWtaryxzqEHHXJJ/view';
 
   //////////////
   // Projects
