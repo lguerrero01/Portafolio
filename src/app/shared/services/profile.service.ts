@@ -88,6 +88,39 @@ export class ProfileService {
       imgUrl: 'assets/img/images/projects/project5.png',
       tech: 'Angular 13, Bootstrap, AOS, toastr',
     },
+    {
+      id: 6,
+      title: 'App de noticias',
+      desc: 'Listar noticias por pais y categoria, consumiendo una api publica',
+      livedemo: '',
+      githurl:
+        'https://github.com/lguerrero01/AppNews',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project6.png',
+      tech: 'Angular 13, Bootstrap, ngx-pagination',
+    },
+    {
+      id: 7,
+      title: 'App de gift',
+      desc: 'Podras buscar tus gift mediante un input y quedaran guadados en historial',
+      livedemo: '',
+      githurl:
+        'https://github.com/lguerrero01/GifsApp',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project7.png',
+      tech: 'Angular 13, Bootstrap',
+    },
+    {
+      id: 8,
+      title: 'App buscador de fotos',
+      desc: 'Busca todo tipo de fotos consumiendo la api publica de Pixabay, incluye paginacion personalizada',
+      livedemo: 'https://app.netlify.com/sites/appphotospixabay',
+      githurl:
+        'https://github.com/lguerrero01/appPhotos',
+      mediumlink: '',
+      imgUrl: 'assets/img/images/projects/project8.png',
+      tech: 'Angular 13, Bootstrap',
+    },
   ];
 
   //////////////
