@@ -1,57 +1,45 @@
-<div class="section" id="about">
+<section class="section" id="about">
   <div class="container">
-    <div class="row justify-content-md-around" >
-      <div class="col-md-12  col-lg-5 card">
-        <div class="card-body">
-          <div class="h4 mt-0 title">Sobre mi</div>
-          <div>
-            <ul>
-              <li *ngFor="let item of about2 | split">{{item}}</li>
-            </ul>
-          </div>
-          <p>{{about1}}</p>
-        </div>
+    <div class="pf-head">
+      <span class="pf-eyebrow">Perfil</span>
+      <h2 class="pf-title">Sobre mí</h2>
+    </div>
 
+    <div class="pf-about">
+      <div class="pf-about__bio" data-aos="fade-up">
+        <p class="pf-about__intro">{{ about1 }}</p>
+        <ul class="pf-about__list">
+          <li *ngFor="let item of about2 | split">
+            <i class="fa fa-check"></i><span>{{ item }}</span>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-12 col-lg-5  card">
-        <div class="card-body">
-          <div class="h4 mt-0 title">Informacion basica</div>
-          <div class="row">
-            <div class="col-sm-4">
-              <strong class="text-uppercase">Fecha de Nacimiento:</strong>
-            </div>
-            <div class="col-sm-8">1 Julio, 1996</div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-sm-4">
-              <strong class="text-uppercase">Email:</strong>
-            </div>
-            <div class="col-sm-8">luisguerrero12387@gmail.com</div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-sm-4">
-              <strong class="text-uppercase">Telefonos:</strong>
-            </div>
-            <div class="col-sm-8">(04244095467)/(04144972182)</div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-sm-4">
-              <strong class="text-uppercase">Direccion:</strong>
-            </div>
-            <div class="col-sm-8">
-              Venezuela, Carabobo, Valencia, Flor Amarillo, Rafael Urdaneta.
-            </div>
-          </div>
-          <div class="row mt-3">
-            <div class="col-sm-4">
-              <strong class="text-uppercase">Idiomas:</strong>
-            </div>
-            <div class="col-sm-8">Español Nativo, Ingles avanzado.</div>
-          </div>
-        </div>
 
-
-      </div>
+      <aside class="pf-about__facts" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="pf-about__facts-title">Información básica</h3>
+        <ul class="pf-facts">
+          <li>
+            <span class="pf-facts__k">Ubicación</span>
+            <span class="pf-facts__v">Valencia, Carabobo — Venezuela</span>
+          </li>
+          <li>
+            <span class="pf-facts__k">Email</span>
+            <span class="pf-facts__v">luisguerrero12387@gmail.com</span>
+          </li>
+          <li>
+            <span class="pf-facts__k">Teléfono</span>
+            <span class="pf-facts__v">+58 424 4095467</span>
+          </li>
+          <li>
+            <span class="pf-facts__k">Idiomas</span>
+            <span class="pf-facts__v">Español (nativo) · Inglés (avanzado)</span>
+          </li>
+          <li>
+            <span class="pf-facts__k">Modalidad</span>
+            <span class="pf-facts__v">Remoto · Freelance</span>
+          </li>
+        </ul>
+      </aside>
     </div>
   </div>
-</div>
+</section>

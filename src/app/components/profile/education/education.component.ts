@@ -4,6 +4,7 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
 
 @Component({
   selector: 'app-education',
+  standalone: false,
   templateUrl: './education.component.html',
   styleUrls: ['./education.component.scss'],
 })

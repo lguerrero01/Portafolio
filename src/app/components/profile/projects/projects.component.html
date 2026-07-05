@@ -1,30 +1,118 @@
-<div class="section" id="projects">
-    <div class="container cc-education">
-        <div class="h4 text-center mb-4 title">Proyectos</div>
-        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-        <div class="row">
-            <ng-container *ngFor="let project of projects| paginate: config">
-                <div class="col-md-4 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-                    <div class="blog-entry">
-                        <div class="card">
-                            <img class="card-img-top" src={{project.imgUrl}}
-                                onerror="this.src = 'assets/img/images/loading-bar.gif'" alt="Card image"
-                                style="width:100%">
-                            <div class="card-body">
-                                <h4 class="card-title">{{project.title}}</h4>
-                                <h5 class="card-text"><b>Tecnologias :</b> {{project.tech}} </h5>
-                                <h5 class="card-text"><b>Descripcion :</b> {{project.desc}} </h5>
-                                <a *ngIf="project.livedemo" href={{project.livedemo}}
-                                    class="btn btn-primary stretched-link ml-2 mr-5" target="_blank">Demo</a>
-                                <a href={{project.githurl}} class="btn btn-primary stretched-link" target="_blank">GithubLink</a>
+<section class="section" id="projects">
+  <div class="container">
+    <div class="pf-head">
+      <span class="pf-eyebrow">Portafolio</span>
+      <h2 class="pf-title">Proyectos en los que he trabajado</h2>
+      <p class="pf-lead">Productos reales construidos de principio a fin — web, móvil y APIs. Haz click para ver la galería.</p>
+    </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
+    <div class="pf-filters" role="tablist">
+      <button *ngFor="let cat of categories" type="button" class="pf-filter"
+        [class.is-active]="activeCategory === cat" (click)="filter(cat)">
+        {{ cat }}
+      </button>
+    </div>
+
+    <div class="pf-projects">
+      <article class="pf-project" *ngFor="let project of projects" [attr.data-cat]="project.category"
+        (click)="openGallery(project)" tabindex="0" role="button"
+        [attr.aria-label]="'Ver galería de ' + project.title"
+        (keydown.enter)="openGallery(project)" data-aos="fade-up">
+        <div class="pf-project__top" [class.has-img]="project.imgUrl">
+          <img *ngIf="project.imgUrl" class="pf-project__img" [src]="project.imgUrl"
+            [alt]="'Captura de ' + project.title" loading="lazy" />
+          <span *ngIf="!project.imgUrl" class="pf-project__mono" aria-hidden="true">{{ project.title.charAt(0) }}</span>
+          <span class="pf-project__badge">{{ project.category }}</span>
+          <span class="pf-project__featured" *ngIf="project.featured" title="Destacado">
+            <i class="fa fa-star"></i>
+          </span>
+          <span class="pf-project__hint" *ngIf="project.gallery?.length">
+            <i class="fa fa-picture-o"></i> {{ project.gallery?.length }} imágenes
+          </span>
         </div>
 
-        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+        <div class="pf-project__body">
+          <h3 class="pf-project__title">{{ project.title }}</h3>
+          <p class="pf-project__desc">{{ project.desc }}</p>
+
+          <div class="pf-project__techs">
+            <span class="pf-chip" *ngFor="let tech of project.techs">
+              <i *ngIf="iconFor(tech)" [class]="iconFor(tech)"></i>{{ tech }}
+            </span>
+          </div>
+        </div>
+
+        <div class="pf-project__foot" *ngIf="project.livedemo || project.githurl">
+          <a *ngIf="project.livedemo" class="pf-btn" [href]="project.livedemo" target="_blank" rel="noopener"
+            (click)="$event.stopPropagation()">
+            <i class="fa fa-external-link"></i> Visitar sitio
+          </a>
+          <a *ngIf="project.githurl" class="pf-btn pf-btn--ghost" [href]="project.githurl" target="_blank"
+            rel="noopener" (click)="$event.stopPropagation()">
+            <i class="fa fa-github"></i> Código
+          </a>
+        </div>
+      </article>
     </div>
-</div>
+  </div>
+
+  <!-- Gallery modal -->
+  <div class="pf-modal" *ngIf="opened" (click)="closeGallery()" role="dialog" aria-modal="true"
+    [attr.aria-label]="'Galería de ' + opened.title">
+    <div class="pf-modal__box" (click)="$event.stopPropagation()">
+      <button class="pf-modal__close" (click)="closeGallery()" aria-label="Cerrar galería">
+        <i class="fa fa-times"></i>
+      </button>
+
+      <div class="pf-modal__main">
+        <div class="pf-modal__stage">
+          <button class="pf-modal__nav pf-modal__nav--prev" *ngIf="images.length > 1" (click)="prev()"
+            aria-label="Anterior"><i class="fa fa-chevron-left"></i></button>
+
+          <div class="pf-modal__viewport">
+            <img #galleryImg *ngIf="images.length" [src]="images[index]" draggable="false"
+              [alt]="opened.title + ' — imagen ' + (index + 1)" />
+            <div class="pf-modal__mono" *ngIf="!images.length">{{ opened.title.charAt(0) }}</div>
+          </div>
+
+          <button class="pf-modal__nav pf-modal__nav--next" *ngIf="images.length > 1" (click)="next()"
+            aria-label="Siguiente"><i class="fa fa-chevron-right"></i></button>
+
+          <div class="pf-modal__zoom" *ngIf="images.length">
+            <button type="button" (click)="zoomOut()" aria-label="Alejar"><i class="fa fa-search-minus"></i></button>
+            <button type="button" (click)="resetZoom()" aria-label="Ajustar"><i class="fa fa-compress"></i></button>
+            <button type="button" (click)="zoomIn()" aria-label="Acercar"><i class="fa fa-search-plus"></i></button>
+          </div>
+          <span class="pf-modal__counter" *ngIf="images.length > 1">{{ index + 1 }} / {{ images.length }}</span>
+        </div>
+
+        <aside class="pf-modal__side">
+          <div class="pf-modal__info">
+            <span class="pf-chip pf-chip--accent">{{ opened.category }}</span>
+            <h3 class="pf-modal__title">{{ opened.title }}</h3>
+            <p class="pf-modal__desc">{{ opened.desc }}</p>
+            <div class="pf-project__techs">
+              <span class="pf-chip" *ngFor="let tech of opened.techs">
+                <i *ngIf="iconFor(tech)" [class]="iconFor(tech)"></i>{{ tech }}
+              </span>
+            </div>
+            <div class="pf-modal__actions">
+              <a *ngIf="opened.livedemo" class="pf-btn" [href]="opened.livedemo" target="_blank" rel="noopener">
+                <i class="fa fa-external-link"></i> Visitar sitio
+              </a>
+              <a *ngIf="opened.githurl" class="pf-btn pf-btn--ghost" [href]="opened.githurl" target="_blank"
+                rel="noopener"><i class="fa fa-github"></i> Código</a>
+            </div>
+          </div>
+
+          <div class="pf-modal__thumbs" *ngIf="images.length > 1">
+            <button *ngFor="let img of images; let i = index" class="pf-modal__thumb" [class.is-active]="i === index"
+              (click)="goTo(i)" [attr.aria-label]="'Ir a imagen ' + (i + 1)">
+              <img [src]="img" [alt]="''" loading="lazy" />
+            </button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>

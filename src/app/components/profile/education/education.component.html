@@ -1,25 +1,24 @@
-<div class="section" id="education">
-    <div class="container cc-education">
-        <div class="h4 text-center mb-4 title">Educacion</div>
-        <div class="card" *ngFor="let item of educationData">
-            <div class="row">
-                <div class="col-md-3 bg-primary" data-aos="fade-right" data-aos-offset="50" data-aos-duration="500">
-                    <div class="card-body cc-education-header">
-                        <p>{{item.from_to_year}}</p>
-                        <div class="h5">{{item.education}}</div>
-                    </div>
-                </div>
-                <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
-                    <div class="card-body">
-                        <div class="h5">{{item.stream}}</div>
-                        <h4 class="category">Institucion: {{item.institution}}
-                        </h4>
-                        <ul>
-                            <li *ngFor="let data of item.info ">{{data}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<section class="section" id="education">
+  <div class="container">
+    <div class="pf-head">
+      <span class="pf-eyebrow">Formación</span>
+      <h2 class="pf-title">Educación</h2>
     </div>
-</div>
+
+    <div class="pf-edu">
+      <article class="pf-edu-card" *ngFor="let item of educationData" data-aos="fade-up">
+        <div class="pf-edu-card__side">
+          <span class="pf-edu-card__year">{{ item.from_to_year }}</span>
+          <span class="pf-edu-card__type">{{ item.education }}</span>
+        </div>
+        <div class="pf-edu-card__body">
+          <h3 class="pf-edu-card__stream">{{ item.stream }}</h3>
+          <p class="pf-edu-card__inst"><i class="fa fa-graduation-cap"></i> {{ item.institution }}</p>
+          <ul class="pf-edu-card__info" *ngIf="item.info.length">
+            <li *ngFor="let data of item.info">{{ data }}</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

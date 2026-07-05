@@ -4,6 +4,7 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
 
 @Component({
   selector: 'app-experience',
+  standalone: false,
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss'],
 })

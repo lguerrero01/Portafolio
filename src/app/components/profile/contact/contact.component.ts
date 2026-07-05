@@ -5,15 +5,17 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import '../../../../assets/smtp.js';
+
+// `Email` is provided globally by the SmtpJS script loaded in index.html.
+declare const Email: any;
 
 @Component({
   selector: 'app-contact',
+  standalone: false,
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
-  public Email: any;
   public model: any = {};
   public fg: FormGroup = new FormGroup({
     name: new FormControl(''),
@@ -36,9 +38,9 @@ export class ContactComponent implements OnInit {
   }
   public sendEmail() {
     console.log(this.fg.value);
-    this.fg.reset;
-    
-    this.Email.send({
+    this.fg.reset();
+
+    Email.send({
       Host: 'smtp.elasticemail.com',
       Username: 'luisguerrero12387@gmail.com',
       Password: 'CBDCDC32BF6F14BF4895BAA07A9DD97081E1',

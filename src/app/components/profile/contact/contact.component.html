@@ -1,91 +1,62 @@
-<div class="section " id="contact">
-    <div class="cc-contact-information" style="background-image: url('assets/img/backgroundPolygon.svg');">
-        <div class="container">
-            <div class="cc-contact">
-                <div class="row">
-                    <div class="col-md-9">
-                        <div class="card mb-0" data-aos="zoom-in">
-                            <div class="h4 text-center title">Contactame</div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <form name="form" [formGroup]="fg" (ngSubmit)="sendEmail()">
-                                            <div class="p pb-3">
-                                                <strong>Sientete libre de contactarme</strong>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="fa fa-user-circle"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" name="name"
-                                                            placeholder="Nombre" formControlName="name"
-                                                            [ngClass]="{ 'is-invalid': validFields('name')}" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="fa fa-file-text"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" placeholder="Asunto"
-                                                            formControlName="subject"
-                                                            [ngClass]="{ 'is-invalid':validFields('subject')}" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="input-group">
-                                                        <span class="input-group-addon">
-                                                            <i class="fa fa-envelope"></i>
-                                                        </span>
-                                                        <input class="form-control" type="text" placeholder="E-mail"
-                                                            formControlName="email"
-                                                            [ngClass]="{ 'is-invalid': validFields('email')}"
-                                                            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-3">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" placeholder="Tu mensaje"
-                                                            formControlName="message"
-                                                            [ngClass]="{ 'is-invalid': validFields('message')}"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <button [disabled]="!fg.valid" class="btn btn-primary"
-                                                        type="submit">Enviar</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card-body">
-                                        <p class="mb-0">
-                                            <strong>Telefono</strong>
-                                        </p>
-                                        <p class="pb-2">+58 4244095467</p>
-                                        <p class="mb-0">
-                                            <strong>Email</strong>
-                                        </p>
-                                        <p>luisguerrero12387@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+<section class="section" id="contact">
+  <div class="container">
+    <div class="pf-head">
+      <span class="pf-eyebrow">Contacto</span>
+      <h2 class="pf-title">Trabajemos juntos</h2>
+      <p class="pf-lead">¿Tienes un proyecto en mente? Cuéntame y te respondo lo antes posible.</p>
     </div>
-</div>
+
+    <div class="pf-contact">
+      <aside class="pf-contact__info">
+        <a class="pf-contact__item" href="mailto:luisguerrero12387@gmail.com">
+          <span class="pf-contact__icon"><i class="fa fa-envelope"></i></span>
+          <span>
+            <span class="pf-contact__k">Email</span>
+            <span class="pf-contact__v">luisguerrero12387@gmail.com</span>
+          </span>
+        </a>
+        <a class="pf-contact__item" href="tel:+584244095467">
+          <span class="pf-contact__icon"><i class="fa fa-phone"></i></span>
+          <span>
+            <span class="pf-contact__k">Teléfono</span>
+            <span class="pf-contact__v">+58 424 4095467</span>
+          </span>
+        </a>
+        <div class="pf-contact__item">
+          <span class="pf-contact__icon"><i class="fa fa-map-marker"></i></span>
+          <span>
+            <span class="pf-contact__k">Ubicación</span>
+            <span class="pf-contact__v">Valencia, Carabobo — Venezuela</span>
+          </span>
+        </div>
+      </aside>
+
+      <form class="pf-contact__form" name="form" [formGroup]="fg" (ngSubmit)="sendEmail()">
+        <div class="pf-field">
+          <label for="c-name">Nombre</label>
+          <input id="c-name" class="form-control" type="text" placeholder="Tu nombre" formControlName="name"
+            [ngClass]="{ 'is-invalid': validFields('name') }" />
+        </div>
+        <div class="pf-field">
+          <label for="c-subject">Asunto</label>
+          <input id="c-subject" class="form-control" type="text" placeholder="¿De qué se trata?"
+            formControlName="subject" [ngClass]="{ 'is-invalid': validFields('subject') }" />
+        </div>
+        <div class="pf-field">
+          <label for="c-email">Email</label>
+          <input id="c-email" class="form-control" type="email" placeholder="tucorreo@ejemplo.com"
+            formControlName="email" [ngClass]="{ 'is-invalid': validFields('email') }"
+            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" />
+        </div>
+        <div class="pf-field">
+          <label for="c-message">Mensaje</label>
+          <textarea id="c-message" class="form-control" rows="4" placeholder="Cuéntame sobre tu proyecto"
+            formControlName="message" [ngClass]="{ 'is-invalid': validFields('message') }"></textarea>
+        </div>
+        <button [disabled]="!fg.valid" class="pf-btn" type="submit">
+          <i class="fa fa-paper-plane"></i> Enviar mensaje
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

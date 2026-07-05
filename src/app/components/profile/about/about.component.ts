@@ -3,6 +3,7 @@ import { ProfileService } from 'src/app/shared/services/profile.service';
 
 @Component({
   selector: 'app-about',
+  standalone: false,
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })
