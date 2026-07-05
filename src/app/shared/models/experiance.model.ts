@@ -22,6 +22,8 @@ export interface Proyect {
   desc: string;
   livedemo: string;
   githurl: string;
+  appstore?: string;
+  playstore?: string;
   category: string;
   techs: string[];
   featured?: boolean;

@@ -42,15 +42,16 @@
           </div>
         </div>
 
-        <div class="pf-project__foot" *ngIf="project.livedemo || project.githurl">
+        <div class="pf-project__foot"
+          *ngIf="project.livedemo || project.githurl || project.appstore || project.playstore">
           <a *ngIf="project.livedemo" class="pf-btn" [href]="project.livedemo" target="_blank" rel="noopener"
-            (click)="$event.stopPropagation()">
-            <i class="fa fa-external-link"></i> Visitar sitio
-          </a>
+            (click)="$event.stopPropagation()"><i class="fa fa-external-link"></i> Visitar sitio</a>
+          <a *ngIf="project.appstore" class="pf-btn pf-btn--ghost" [href]="project.appstore" target="_blank"
+            rel="noopener" (click)="$event.stopPropagation()"><i class="fa fa-apple"></i> App Store</a>
+          <a *ngIf="project.playstore" class="pf-btn pf-btn--ghost" [href]="project.playstore" target="_blank"
+            rel="noopener" (click)="$event.stopPropagation()"><i class="fa fa-android"></i> Google Play</a>
           <a *ngIf="project.githurl" class="pf-btn pf-btn--ghost" [href]="project.githurl" target="_blank"
-            rel="noopener" (click)="$event.stopPropagation()">
-            <i class="fa fa-github"></i> Código
-          </a>
+            rel="noopener" (click)="$event.stopPropagation()"><i class="fa fa-github"></i> Código</a>
         </div>
       </article>
     </div>
@@ -100,6 +101,10 @@
               <a *ngIf="opened.livedemo" class="pf-btn" [href]="opened.livedemo" target="_blank" rel="noopener">
                 <i class="fa fa-external-link"></i> Visitar sitio
               </a>
+              <a *ngIf="opened.appstore" class="pf-btn pf-btn--ghost" [href]="opened.appstore" target="_blank"
+                rel="noopener"><i class="fa fa-apple"></i> App Store</a>
+              <a *ngIf="opened.playstore" class="pf-btn pf-btn--ghost" [href]="opened.playstore" target="_blank"
+                rel="noopener"><i class="fa fa-android"></i> Google Play</a>
               <a *ngIf="opened.githurl" class="pf-btn pf-btn--ghost" [href]="opened.githurl" target="_blank"
                 rel="noopener"><i class="fa fa-github"></i> Código</a>
             </div>
