@@ -171,10 +171,15 @@ export class ProfileService {
     },
     {
       id: 6,
-      title: 'Cibergym (Fénix)',
-      desc: 'Sistema de gestión para gimnasios construido con Angular moderno: control de miembros, planes y seguimiento de rutinas.',
+      title: 'Cibergym · CiberChallenge',
+      desc: 'Plataforma de encuestas y challenges corporativos construida con Angular 20: autenticación de usuarios, multi-idioma y flujo de encuestas. Desplegada como "Indra CiberChallenge" para Indra Group.',
       category: 'Web',
-      techs: ['Angular', 'TypeScript', 'Bootstrap'],
+      techs: ['Angular', 'TypeScript', 'RxJS'],
+      imgUrl: 'assets/img/projects/cibergym/login.jpg',
+      gallery: [
+        'assets/img/projects/cibergym/login.jpg',
+        'assets/img/projects/cibergym/mobile.jpg',
+      ],
       livedemo: '',
       githurl: '',
     },
