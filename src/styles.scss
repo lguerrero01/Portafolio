@@ -480,12 +480,22 @@ img { max-width: 100%; }
   border-radius: 999px;
 }
 
-/* Mobile: stack image over info */
+/* Mobile: bottom-sheet — leaves a top gap so the close button clears the
+   browser address bar (iOS Chrome/Safari) and the gap is tappable to close. */
 @media (max-width: 820px) {
-  .pf-modal { padding: 0; }
-  .pf-modal__box { height: 100vh; max-width: none; border-radius: 0; }
+  .pf-modal { padding: 0; align-items: flex-end; }
+  .pf-modal__box {
+    height: 92vh;
+    height: 92dvh;
+    max-width: none;
+    border-radius: 18px 18px 0 0;
+  }
+  .pf-modal__close {
+    top: calc(env(safe-area-inset-top, 0px) + 12px);
+    right: 12px;
+  }
   .pf-modal__main { flex-direction: column; overflow-y: auto; }
-  .pf-modal__stage { flex: none; height: 46vh; }
+  .pf-modal__stage { flex: none; height: 44vh; height: 44dvh; }
   .pf-modal__side {
     width: 100%;
     border-left: 0;
