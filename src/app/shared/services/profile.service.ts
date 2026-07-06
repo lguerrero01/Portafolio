@@ -127,7 +127,7 @@ export class ProfileService {
         'assets/img/projects/ubicaeventos/listado-1.jpg',
         'assets/img/projects/ubicaeventos/group-2049.jpg',
       ],
-      livedemo: '',
+      livedemo: 'https://ubicaeventos.com/home',
       githurl: '',
       featured: true,
     },
