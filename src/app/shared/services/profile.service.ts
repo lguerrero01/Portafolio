@@ -248,6 +248,30 @@ export class ProfileService {
       githurl: '',
       featured: true,
     },
+    {
+      id: 12,
+      title: 'BarberApp',
+      desc: 'App de reservas para barberías con roles de barbero y cliente: agenda, panel de administración, pagos, mapa de barberos cercanos y asistente de reserva paso a paso. Frontend en Angular + Ionic con backend en Supabase.',
+      category: 'Full Stack',
+      techs: ['Angular', 'Ionic', 'TypeScript', 'Supabase', 'Capacitor'],
+      imgUrl: 'assets/img/projects/barber-app/auth.jpg',
+      gallery: [
+        'assets/img/projects/barber-app/auth.jpg',
+        'assets/img/projects/barber-app/mapa.jpg',
+        'assets/img/projects/barber-app/pagos.jpg',
+        'assets/img/projects/barber-app/barberos.jpg',
+        'assets/img/projects/barber-app/busqueda.jpg',
+        'assets/img/projects/barber-app/mis-citas.jpg',
+        'assets/img/projects/barber-app/servicios.jpg',
+        'assets/img/projects/barber-app/horas.jpg',
+        'assets/img/projects/barber-app/confirmar.jpg',
+        'assets/img/projects/barber-app/exito.jpg',
+        'assets/img/projects/barber-app/proxima.jpg',
+      ],
+      livedemo: '',
+      githurl: '',
+      featured: true,
+    },
   ];
 
   //////////////
@@ -331,6 +355,7 @@ export class ProfileService {
         { name: 'MySQL', icon: 'devicon-mysql-plain colored' },
         { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
         { name: 'Firebase', icon: 'devicon-firebase-plain colored' },
+        { name: 'Supabase', icon: 'devicon-supabase-plain colored' },
         { name: 'Git', icon: 'devicon-git-plain colored' },
         { name: 'Google Maps', icon: '' },
       ],
