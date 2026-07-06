@@ -154,9 +154,8 @@ export class ProfileService {
       desc: 'Plataforma de e-learning (Double Healix): catálogo de cursos de desarrollo personal y liderazgo con lecciones en video, temario, inscripción y reproductor. Frontend en Angular con API en Node/Express y Laravel.',
       category: 'Full Stack',
       techs: ['Angular', 'Node.js', 'Express', 'Laravel'],
-      imgUrl: 'assets/img/projects/movielearning/home.jpg',
+      imgUrl: 'assets/img/projects/movielearning/catalog.jpg',
       gallery: [
-        'assets/img/projects/movielearning/home.jpg',
         'assets/img/projects/movielearning/catalog.jpg',
         'assets/img/projects/movielearning/course.jpg',
         'assets/img/projects/movielearning/lesson.jpg',
